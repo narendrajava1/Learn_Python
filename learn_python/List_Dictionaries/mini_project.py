@@ -8,10 +8,12 @@
 # Calculate investment & profit
 #
 # Print a simple report
+stock=input("Enter stock symbol: ")
+buy_price=float(input("Enter buy price: "))
+qty=int(input("Enter quantity: "))
+current_price=float(input("Enter current price: "))
 portfolio = [
-    {"stock": "NIFTY", "buy_price": 150, "current_price": 170, "qty": 50},
-    {"stock": "BANKNIFTY", "buy_price": 200, "current_price": 180, "qty": 30},
-    {"stock": "RELIANCE", "buy_price": 2500, "current_price": 2600, "qty": 10}
+    {"stock": stock, "buy_price": buy_price, "current_price": current_price, "qty": qty}
 ]
 #calculate profit
 total_profit=0
@@ -20,3 +22,15 @@ for option_index in portfolio:
     print(f"{option_index['stock']} Profit: {profit}")
     total_profit+=profit
     print("Total Profit:", total_profit)
+
+# 🔥 Step 4: Improve (Add Investment Calculation)
+total_investment = 0
+
+for item in portfolio:
+    investment = item["buy_price"] * item["qty"]
+    total_investment += investment
+
+print("Total Investment:", total_investment)
+# 🔥 Step 5: Profit % (Advanced)
+profit_percent = (total_profit / total_investment) * 100
+print("Profit %:", profit_percent.__round__(2))
