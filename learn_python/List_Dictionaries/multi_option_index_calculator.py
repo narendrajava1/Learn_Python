@@ -1,4 +1,3 @@
-import tkinter as tk
 # ===== CONFIG =====
 symbol_config = {
     "NIFTY": {"lot_size": 65, "max_qty": 1755},
@@ -107,31 +106,3 @@ print("Profit %:", round(profit_percent, 2))
 print("Break-even:", be)
 print("Return Ratio:", round(return_ratio, 4))
 print("Risk-Reward Ratio:", round(risk_reward, 2))
-
-# ===== UI =====
-root = tk.Tk()
-root.title("Option Trading Simulator")
-root.geometry("400x500")
-
-tk.Label(root, text="Symbol (e.g., NIFTY 23800 CE)").pack()
-symbol_entry = tk.Entry(root)
-symbol_entry.pack()
-
-tk.Label(root, text="Lots").pack()
-lots_entry = tk.Entry(root)
-lots_entry.pack()
-
-tk.Label(root, text="Buy Price").pack()
-buy_entry = tk.Entry(root)
-buy_entry.pack()
-
-tk.Label(root, text="Sell Price").pack()
-sell_entry = tk.Entry(root)
-sell_entry.pack()
-
-tk.Button(root, text="Calculate", command=calculate).pack(pady=10)
-
-result_label = tk.Label(root, text="", justify="left")
-result_label.pack()
-
-root.mainloop()
